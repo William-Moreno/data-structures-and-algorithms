@@ -81,7 +81,7 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
-const fizzbuzz = (arr) => {
+const fizzbuzz = arr => {
   const outputArray = [];
   arr.forEach(value => {
     if(value % 5 === 0 && value % 3 === 0){
@@ -93,7 +93,7 @@ const fizzbuzz = (arr) => {
     } else {
       outputArray.push(value);
     }
-  })
+  });
   return outputArray;
 };
 
