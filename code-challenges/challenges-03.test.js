@@ -26,8 +26,8 @@ CHALLENGE 2
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBackwards = (arr) => {
-  arr.sort((a,b) => {
+const sortBackwards = arr => {
+  arr.sort((a, b) => {
     if(a > b){
       return -1;
     } else if(a < b){
@@ -49,8 +49,17 @@ In this alphabetization, capital letters come before lower case letters.
 For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
-const alphabetize = (arr) => {
-  // Solution code here...
+const alphabetize = arr => {
+  arr.sort((a, b) => {
+    if(a < b){
+      return -1;
+    } else if(a > b){
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,8 +68,17 @@ CHALLENGE 4
 Write a function named sortByLength that takes in an array of strings and returns the same array, with the strings sorted by their length, lowest to highest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortByLength = (arr) => {
-  // Solution code here...
+const sortByLength = arr => {
+  arr.sort((a, b) => {
+    if(a.length < b.length){
+      return -1;
+    } else if(a.length > b.length){
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
