@@ -115,8 +115,17 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const sortByPrice = (arr) => {
-  // Solution code here...
+const sortByPrice = arr => {
+  arr.sort((a, b) => {
+    if(a.price < b.price){
+      return -1;
+    } else if(a.price > b.price){
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -283,7 +292,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should sort items by their price', () => {
     expect(sortByPrice([
       {name: 'Sweatshirt', price: 45},
