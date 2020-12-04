@@ -154,7 +154,8 @@ const seashells =
   'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
 const findShells = (str) => {
-  // Solution code here...
+  const ellsFind = /[a-z]*(ells)\b/gi;
+  return str.match(ellsFind);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -409,7 +410,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array of instances of "sells", shells", and "seashells"', () => {
     expect(findShells(seashells)).toStrictEqual([
       'sells',
