@@ -38,13 +38,13 @@ let $ = createSnippetWithJQuery(`
 
 const templateWithJQuery = () => {
   starWarsPeople.forEach(person => {
-    const $people = $('#template').clone();
-    $people.find('h2').text(person.name);
-    $people.find('h3').text(person.height);
-    $people.find('p').text(person.eye_color);
-    $people.removeAttr('id');
+    const $person = $('#template').clone();
+    $person.find('h2').text(person.name);
+    $person.find('h3').text(person.height);
+    $person.find('p').text(person.eye_color);
+    $person.removeAttr('id');
 
-    $('section').append($people);
+    $('main').append($person);
 
   });
 };
