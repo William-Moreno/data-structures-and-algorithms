@@ -96,10 +96,11 @@ const matchMonth = (input) => {
   let startsWith = monthMatch.test(input.toString());
   if(startsWith){
     if(input.length > 3){
-    const fullMonthMatch = /^([oO]ctober)$/;
-    startsWith = fullMonthMatch.test(input.toString());
+      const fullMonthMatch = /^([oO]ctober)$/;
+      startsWith = fullMonthMatch.test(input.toString());
+    }
+    return startsWith;
   }
-  return startsWith;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,9 +113,14 @@ For example, if given the string "Hello, and have a wonderful day!", the word "H
 The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "a ", "wonderful "].
 ------------------------------------------------------------------------------------------------ */
 
-const noPunctuation = (str) => {
-  // Solution code here...
-};
+function noPunctuation(str) {
+  const trailingSpace = /\b[a-z0-9]*\s/gi;
+  let spaceArray = str.match(trailingSpace);
+  if(spaceArray === null){
+    spaceArray = [];
+  }
+  return spaceArray;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -129,7 +135,9 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  const vowelFind = /[aeiou]/gi;
+  let unVoweled = str.replace(vowelFind, '_');
+  return unVoweled;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -282,7 +290,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   const lorem =
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.';
 
@@ -381,7 +389,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   let startString =
     'This is a regex challenge. We are trying to create a hangman phrase where all of the vowels are missing!';
 
