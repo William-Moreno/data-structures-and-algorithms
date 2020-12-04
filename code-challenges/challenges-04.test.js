@@ -54,7 +54,12 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  const capWords = /\b[A-Z][a-z]*/g;
+  let capArray = str.match(capWords);
+  if (capArray === null) {
+    capArray = [];
+  }
+  return capArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,7 +69,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const cityAj = /^[A-J]/;
+  let sortCity = [];
+  arr.forEach((city, idx) => {
+    if (cityAj.test(city)) {
+      sortCity.push(arr[idx]);
+    }
+  });
+  return sortCity;
 };
 
 /* ------------------------------------------------------------------------------------------------
