@@ -211,7 +211,19 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  let modString = '';
+
+  if(numberOfCharacters < 0){
+    modString = str;
+  }
+  if(numberOfCharacters <= str.length && numberOfCharacters >= 0){
+    const stringArray = str.split('');
+    for(let i = 0 ; i < numberOfCharacters; i++){
+      stringArray.pop();
+    }
+    modString = stringArray.join('');
+  }
+  return modString;
 };
 
 
@@ -325,7 +337,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should shorten the string based on the first argument', () => {
     expect(removeLastCharacters('Gregor', 2)).toStrictEqual('Greg');
     expect(removeLastCharacters('Gregor', 2).length).toStrictEqual(4);
