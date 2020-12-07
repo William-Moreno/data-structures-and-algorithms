@@ -188,8 +188,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  for(let i = 0 ; i < arr.length ; i++){
-    if(number % 2 === 0){
+  for(let i = arr.length - 1 ; i >= 0 ; i--){
+    if(arr[i] % 2 === 0){
       arr.splice(i,1);
     }
   }
