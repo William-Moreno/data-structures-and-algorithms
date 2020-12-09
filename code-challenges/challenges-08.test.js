@@ -9,8 +9,8 @@ Write a function named sayHello, that sends the message 'Hello from the back-end
 
 // Express sever here
 const createServer = () => {
-  const express=require('express');
-  const app=express();
+  const express = require('express');
+  const app = express();
   app.get('/hello', sayHello);
 
   var server = app.listen(3301, function () {
@@ -63,7 +63,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter(val => !forbiddenValues.includes(val));
 };
 
 /* ------------------------------------------------------------------------------------------------
