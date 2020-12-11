@@ -186,7 +186,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  return arr.reduce(function(acc,curr){
+  return arr.reduce(function(acc){
     return acc + 1;
   },0);
 };
