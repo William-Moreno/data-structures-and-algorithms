@@ -5,7 +5,9 @@ CHALLENGE 1 - Review
 
 First, write a function called mapCurrentEvents that maps over the current events object, runs it through a constructor function and returns the resulting array.
 
+
 The constructor function should be a stand alone function named Events and should have the following keys:
+
 * author
 * categories
 * summary
@@ -26,7 +28,9 @@ const createServer = () => {
   const app=express();
 
   // Routes go here
+
   app.get('/events', getCurrentEvents);
+
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
@@ -38,6 +42,7 @@ const createServer = () => {
 const currentEvents = {
   news: [
     {
+
       author: 'go',
       category: [
         'world'
@@ -175,6 +180,7 @@ function Event(obj){
   this.img_url = obj.image;
   this.date = obj.published;
   this.title = obj.title;
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -186,10 +192,12 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
+
   return arr.reduce(function(acc){
     return acc + 1;
   },0);
 };
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -249,10 +257,12 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
+
   return arr.reduce((acc,person) => {
     acc.push(person.name);
     return acc;
   },[]);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -264,11 +274,13 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
+
   let strArray = str.split('');
   let rts = strArray.reduce((reverseString, letter) => {
     return letter + reverseString;
   }, '');
   return rts;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -426,11 +438,13 @@ Run your tests from the console: jest challenges-09.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return an array of object instances with a key of author', () => {
+
     expect(mapCurrentEvents()[0].author).toStrictEqual('go');
   });
 
   test('It should return an array of object instances with a key of categories', () => {
     expect(mapCurrentEvents()[0].categories).toStrictEqual(['world']);
+
   });
   const request = require('supertest');
 
