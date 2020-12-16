@@ -45,12 +45,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  return arr.map(value => {
-    if(value.includes(':)')){
-      return value;
-    } else {
-      return '';
-    };
+  let happyHappy = [];
+  arr.forEach(value => {
+    if(value.includes(':)')) {
+      happyHappy.push(value);
+    }
+  });
+  return happyHappy;
 };
 
 /* ------------------------------------------------------------------------------------------------
