@@ -33,7 +33,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  return arr.map(value => value.charAt(0));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +45,12 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.map(value => {
+    if(value.includes(':)')){
+      return value;
+    } else {
+      return '';
+    };
 };
 
 /* ------------------------------------------------------------------------------------------------
