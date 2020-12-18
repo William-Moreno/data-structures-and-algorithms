@@ -116,7 +116,18 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let heavyArray = arr.map(person => {
+    let threshhold = Number(arr[0].mass);
+    if(Number(person.mass) > threshhold){
+      console.log(Number(person.mass));
+      return person.name;
+    } else {
+      return '';
+    }
+  });
+  const smallerArray = heavyArray.filter(name => name.length > 0);
+  const biggerString = smallerArray.join(' - ');
+  return biggerString;
 };
 
 /* ------------------------------------------------------------------------------------------------
