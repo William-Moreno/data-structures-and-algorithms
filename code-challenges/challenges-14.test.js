@@ -145,8 +145,37 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  if(property === 'name'){
+    arr.sort(function(a, b) {
+      let proA = a.name;
+      let proB = b.name;
+      if (proA < proB) {
+        return -1;
+      }
+      if (proA > proB) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    return arr;
+  } else {
+    arr.sort(function(a, b) {
+      let proA = a.price;
+      let proB = b.price;
+      if (proA < proB) {
+        return -1;
+      }
+      if (proA > proB) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    return arr;
+  }
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
