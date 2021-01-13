@@ -428,7 +428,17 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  let statId = arr.reduce((acc, value) => {
+    if(value.stat.name === statName){
+      acc = value;
+    }
+    return acc;
+  }, {});
+  if(!statId.stat){
+    return null;
+  } else {
+    return statId;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -527,7 +537,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
   });
