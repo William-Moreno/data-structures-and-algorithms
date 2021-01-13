@@ -352,7 +352,13 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  const avgObj = arr.reduce((accum, value) => {
+    accum.count++;
+    accum.sum+= value;
+    return accum;
+  }, {count: 0, sum: 0});
+  const average = avgObj.sum/avgObj.count;
+  return average;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -503,7 +509,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
