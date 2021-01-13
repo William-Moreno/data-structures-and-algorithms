@@ -186,7 +186,20 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-  // Solution code here...
+  arr.forEach(household => {
+    let counter = 1;
+    if(household.spouse !== null){
+      counter++;
+    }
+    counter+= household.children.length;
+
+    const houseMembers = {
+      house: household.house,
+      members: counter
+    };
+
+    sizes.push(houseMembers);
+  });
   return sizes;
 };
 
@@ -210,7 +223,22 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
+  arr.forEach(household => {
+    let counter = 1;
+    if(household.spouse === null || deceasedSpouses.includes(household.spouse)){
+      counter = 1;
+    } else {
+      counter++;
+    }
+    counter+= household.children.length;
+
+    const houseMembers = {
+      house: household.house,
+      members: counter
+    };
+
+    survivors.push(houseMembers);
+  });
   return survivors;
 };
 
@@ -272,14 +300,14 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an object for each house containing the name and size', () => {
     expect(houseSize(characters)).toStrictEqual([{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, { house: 'Lannister', members: 5 }, { house: 'Targaryen', members: 5 }, { house: 'Tyrell', members: 4 }, { house: 'Greyjoy', members: 1 }, { house: 'Snow', members: 1 }]);
     expect(houseSize(characters).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should not include any deceased spouses', () => {
     expect(houseSurvivors(characters)).toStrictEqual([{ house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, { house: 'Lannister', members: 4 }, { house: 'Targaryen', members: 4 }, { house: 'Tyrell', members: 3 }, { house: 'Greyjoy', members: 1 }, { house: 'Snow', members: 1 }]);
   });
