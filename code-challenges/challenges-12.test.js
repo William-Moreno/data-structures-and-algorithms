@@ -138,7 +138,13 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let totalProduct = 1;
+  for(let i = 0 ; i < numbers.length ; i++){
+    for(let j = 0 ; j < numbers[i].length; j++){
+      totalProduct = totalProduct * numbers[i][j];
+    }
+  }
+  return totalProduct;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -270,7 +276,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should multiply all the numbers together', () => {
     expect(calculateProduct([[1, 2], [3, 4], [5, 6]])).toStrictEqual(720);
   });
