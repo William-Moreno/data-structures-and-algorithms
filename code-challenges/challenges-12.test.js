@@ -220,7 +220,18 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+  const rowArray = str.split('\n');
+  const tableArray = rowArray.map(value => value.split(','));
+  for(let i = 0 ; i < tableArray.length ; i++){
+    for(let j = 0 ; j < tableArray[i].length ; j++){
+      tableArray[i][j] = Number(tableArray[i][j]);
+    }
+    tableArray[i] = tableArray[i].reduce((accum, value) => {
+      accum+= value;
+      return accum;
+    }, 0);
+  }
+  return tableArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -321,7 +332,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return the total count for each row', () => {
     let result = excel('1,1,1\n4,4,4\n9,9,9');
     expect(result.length).toStrictEqual(3);
