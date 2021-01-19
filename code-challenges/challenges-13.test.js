@@ -211,7 +211,10 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
 const characterByIndex = (arr) => {
-  // Solution code here...
+  const letterArray = arr.map((str, idx) => {
+    return str.charAt(idx);
+  });
+  return letterArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -343,7 +346,7 @@ describe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return the ith character of the ith string', () => {
     const words = ['apple', 'banana', 'cantaloupe'];
 
