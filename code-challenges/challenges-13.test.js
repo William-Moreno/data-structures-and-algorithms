@@ -152,7 +152,17 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  const brookless = arr.map(course => {
+    const courseCorrect = course.filter(student => {
+      if(!student.includes('Brook')){
+        return true;
+      } else {
+        return false;
+      }
+    });
+    return courseCorrect;
+  });
+  return brookless;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -281,7 +291,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove Brook from all courses', () => {
     const roster = [
       ['Michelle', 'Allie', 'Brook TESTING'],
