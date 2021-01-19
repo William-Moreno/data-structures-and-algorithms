@@ -214,7 +214,27 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  const diagonalOne = board.map((row, idx) => row[idx]);
+  const diagonalTwo = board.map((row, idx) => row[(2-idx)]);
+  const columnOne = board.map(row => row[0]);
+  const columnTwo = board.map(row => row[1]);
+  const columnThree = board.map(row => row[2]);
+  const checker = [];
+  checker.push(board[0], board[1], board[2], columnOne, columnTwo, columnThree, diagonalOne, diagonalTwo);
+
+  const checkForWin = checker.reduce((accum, path) => {
+    if(accum === true){
+      accum = true;
+    } else if(path.includes('')){
+      accum = false;
+    } else if(path[0] === path[1] && path[1] === path[2]){
+      accum = true;
+    } else {
+      accum = false;
+    }
+    return accum;
+  }, false);
+  return checkForWin;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -315,7 +335,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return true if there are three in a row', () => {
     expect(detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(true);
     expect(detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
