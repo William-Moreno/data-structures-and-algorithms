@@ -1,14 +1,5 @@
 # Data Structures and Algorithms
 
-## Language: `JavaScript`
-
-### Folder and Challenge Setup
-
-Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.
-
-### Data Structure: New Implementation
-
-- Create a new folder under the `javascript` level, with the name of the data structure and complete your implementation there
   - i.e. `linked-list`
 - Implementation (the data structure "class")
   - The implementation of the data structure must be named `index.js`
