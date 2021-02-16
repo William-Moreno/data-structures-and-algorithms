@@ -1,6 +1,7 @@
 'use strict';
 
 const insertShiftArray = (arr, val) => {
+  if(!val){return arr;}
   const newArray = [];
   let middleIndex = arr.length/2;
   let secondLoopStart = 0;
