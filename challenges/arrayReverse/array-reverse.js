@@ -8,4 +8,4 @@ const reverseArray = (arr) => {
   return reversedOrder;
 };
 
-module.export = reverseArray;
+module.exports = reverseArray;
