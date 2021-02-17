@@ -11,5 +11,7 @@ The challenge is to write a function which takes an array and a value as argumen
 The approach I took was to create an empty array and find the middle index of the supplied array. Next, I *push*ed the individual elements into that array as I iterated through the first half of the original array utilizing a *'for loop'*. Once the loop is complete, the supplied value is *push*ed into the array and then I iterated through the second half of the original array utilizing another *'for loop'* and pushing the elements into the array. Finally, I return the new array.
 
 ## Solution
+[array-shift](array-shift.js)
 
 ![array-shift whiteboard](../../assets/array-shift.JPG)
+
