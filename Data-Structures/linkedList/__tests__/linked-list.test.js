@@ -51,5 +51,28 @@ describe('Testing Linked List functionality', () => {
 
     expect(valueExists).toEqual(true);
   });
+
+  it('Should return FALSE when searching for a value that does not exist in the list', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(5);
+    testList.head.next = new NodeGen(10);
+    testList.head.next.next = new NodeGen(15);
+    const valueExists = testList.includes(20);
+
+    expect(valueExists).toEqual(false);
+  });
+
+  it('Should properly return a collection of all the values existing in the list', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen('Four');
+    testList.head.next = new NodeGen(5);
+    testList.head.next.next = new NodeGen('Six');
+    testList.insert(3);
+    testList.insert('Two');
+    testList.insert(1);
+    const listString = testList.toString();
+
+    expect(listString).toEqual('{1} -> {Two} -> {3} -> {Four} -> {5} -> {Six} -> NULL');
+  });
 });
 
