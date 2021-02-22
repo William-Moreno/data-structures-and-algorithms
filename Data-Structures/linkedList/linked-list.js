@@ -50,6 +50,12 @@ class LinkedList {
 
   append(value) {
     let appendedNode = new Node(value);
+
+    if(!this.head) {
+      this.head = appendedNode;
+      return this.head;
+    }
+
     let current = this.head;
 
     while(current.next !== null) {
@@ -75,25 +81,24 @@ class LinkedList {
       }
       current = current.next;
     }
-    return console.log('Exception');
+    return 'Exception';
   }
 
   insertAfter(value, newVal) {
+    let newValNode = new Node(newVal);
+    let current = this.head;
 
+    while(current) {
+      if(current.value === value) {
+        newValNode.next = current.next;
+        current.next = newValNode;
+        return this.head;
+      }
+      current = current.next;
+    }
+    return 'Exception';
   }
 }
-
-const testList = new LinkedList();
-testList.head = new Node(0);
-testList.head.next = new Node(1);
-testList.head.next.next = new Node(2);
-testList.head.next.next.next = new Node(3);
-
-console.log(testList.toString());
-testList.append(4);
-console.log(testList.toString());
-testList.insertBefore(0, 5);
-console.log(testList.toString());
 
 
 module.exports = {
