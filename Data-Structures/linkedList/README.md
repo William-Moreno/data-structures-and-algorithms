@@ -65,3 +65,8 @@ This method takes in a value as an argument. It then traverses the Linked List u
  #### `.insertAfter(value, newval)`
 
  This method takes in a value and a new value(newVal). A new node is created with a value of newVal and then the Linked List is traversed until a node with a value that matches the value argument is reached. The new node's `.next` is set to the current node's `.next` and then the current node's `.next` is set to the new node, thereby inserting the node into the correct position in the list. If the value supplied as an argument does not exist within the Linked List, `'Exception'` is returned instead.
+
+ ## Solution
+[linked-list](linked-list.js)
+
+![linked-list challenge 6 whiteboard](../../assets/linked-list-challenge-6.png)
