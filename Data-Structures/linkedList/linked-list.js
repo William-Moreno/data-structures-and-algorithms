@@ -47,6 +47,57 @@ class LinkedList {
     listString += `NULL`;
     return listString;
   }
+
+  append(value) {
+    let appendedNode = new Node(value);
+
+    if(!this.head) {
+      this.head = appendedNode;
+      return this.head;
+    }
+
+    let current = this.head;
+
+    while(current.next !== null) {
+      current = current.next;
+    }
+    current.next = appendedNode;
+  }
+
+  insertBefore(value, newVal) {
+    if(value === this.head.value) {
+      this.insert(newVal);
+      return this.head;
+    }
+
+    let newValNode = new Node(newVal);
+    let current = this.head;
+
+    while(current.next !== null) {
+      if(current.next.value === value) {
+        newValNode.next = current.next;
+        current.next = newValNode;
+        return this.head;
+      }
+      current = current.next;
+    }
+    return 'Exception';
+  }
+
+  insertAfter(value, newVal) {
+    let newValNode = new Node(newVal);
+    let current = this.head;
+
+    while(current) {
+      if(current.value === value) {
+        newValNode.next = current.next;
+        current.next = newValNode;
+        return this.head;
+      }
+      current = current.next;
+    }
+    return 'Exception';
+  }
 }
 
 

@@ -74,5 +74,84 @@ describe('Testing Linked List functionality', () => {
 
     expect(listString).toEqual('{1} -> {Two} -> {3} -> {Four} -> {5} -> {Six} -> NULL');
   });
+
+  it('Should add a node to the end of the list using append() method', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    testList.head.next = new NodeGen(1);
+    testList.head.next.next = new NodeGen(2);
+    testList.head.next.next.next = new NodeGen(3);
+    testList.append(4);
+    const listString = testList.toString();
+
+    expect(listString).toEqual('{0} -> {1} -> {2} -> {3} -> {4} -> NULL');
+  });
+
+  it('Should add multiple nodes to the end of the list using append() method', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    testList.head.next = new NodeGen(1);
+    testList.head.next.next = new NodeGen(2);
+    testList.head.next.next.next = new NodeGen(3);
+    testList.append(4);
+    testList.append(5);
+    testList.append(6);
+    const listString = testList.toString();
+
+    expect(listString).toEqual('{0} -> {1} -> {2} -> {3} -> {4} -> {5} -> {6} -> NULL');
+  });
+
+  it('Should insert a node before a node with a given value in the list using insertBefore() method', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    testList.head.next = new NodeGen(1);
+    testList.head.next.next = new NodeGen(2);
+    testList.head.next.next.next = new NodeGen(3);
+    testList.insertBefore(3, 10);
+    const listString = testList.toString();
+    const response = testList.insertBefore(100, 7);
+
+    expect(listString).toEqual('{0} -> {1} -> {2} -> {10} -> {3} -> NULL');
+    expect(response).toEqual('Exception');    
+  });
+
+  it('Should insert a node before the first node of the list using insertBefore() method', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    testList.head.next = new NodeGen(1);
+    testList.head.next.next = new NodeGen(2);
+    testList.head.next.next.next = new NodeGen(3);
+    testList.insertBefore(0, 20);
+    const listString = testList.toString();
+
+    expect(listString).toEqual('{20} -> {0} -> {1} -> {2} -> {3} -> NULL');
+  });
+
+  it('Should insert a node after a node with a given value in the list using insertAfter() method', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    testList.head.next = new NodeGen(1);
+    testList.head.next.next = new NodeGen(2);
+    testList.head.next.next.next = new NodeGen(3);
+    testList.insertAfter(1, 'A');
+    const listString = testList.toString();
+    const response = testList.insertAfter(100, 7);
+
+
+    expect(listString).toEqual('{0} -> {1} -> {A} -> {2} -> {3} -> NULL');
+    expect(response).toEqual('Exception');
+  });
+
+  it('Should insert a node after the last node of the list using insertAfter() method', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    testList.head.next = new NodeGen(1);
+    testList.head.next.next = new NodeGen(2);
+    testList.head.next.next.next = new NodeGen(3);
+    testList.insertAfter(3, 'B');
+    const listString = testList.toString();
+
+    expect(listString).toEqual('{0} -> {1} -> {2} -> {3} -> {B} -> NULL');
+  });
 });
 
