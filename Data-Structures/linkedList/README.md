@@ -50,9 +50,10 @@ The methods available to my LinkedList are:
 - `.insert(value)`
 - `.includes(value)`
 - `.toString()`
-- `.append()`
-- `.insertBefore()`
-- `.insertAfter()`
+- `.append(value)`
+- `.insertBefore(value, newVal)`
+- `.insertAfter(value, newVal)`
+- `.kthFromEnd(k)`
 
 #### `.insert(value)`
 
