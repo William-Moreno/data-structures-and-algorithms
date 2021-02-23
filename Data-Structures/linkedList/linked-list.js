@@ -98,7 +98,49 @@ class LinkedList {
     }
     return 'Exception';
   }
+
+  kthFromEnd(k) {
+    if(!this.head.next) {
+      return `Only 1 value exists in the Linked List: ${this.head.value}`;
+    }
+
+    if(k < 1) {
+      return 'Exception';
+    }
+
+    let marker = this.head;
+    let current = this.head;
+
+    for (let i = 0 ; i < k ; i++) {
+      if(!marker) {
+        return 'Exception';
+      }
+      marker = marker.next;
+    }
+
+    if (!marker) {
+      return 'Exception';
+    }
+
+    while(marker.next) {
+      current = current.next;
+      marker = marker.next;
+    }
+
+    return current.value;
+  }
 }
+
+
+const test = new LinkedList();
+test.head = new Node(0);
+test.head.next = new Node(1);
+test.head.next.next = new Node(2);
+test.head.next.next.next = new Node(3);
+test.head.next.next.next.next = new Node(4);
+
+console.log(test.kthFromEnd(3));
+
 
 
 module.exports = {

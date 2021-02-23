@@ -153,5 +153,57 @@ describe('Testing Linked List functionality', () => {
 
     expect(listString).toEqual('{0} -> {1} -> {2} -> {3} -> {B} -> NULL');
   });
+
+  it('Should return the value of the node that is "k" nodes from the end using kthFromEnd() method', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    testList.head.next = new NodeGen(1);
+    testList.head.next.next = new NodeGen(2);
+    testList.head.next.next.next = new NodeGen(3);
+    const returnValue = testList.kthFromEnd(2);
+    
+    expect(returnValue).toEqual(1);
+  });
+
+  it('Should return "Exception" if "k" is greater than the length of the Linked List', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    testList.head.next = new NodeGen(1);
+    testList.head.next.next = new NodeGen(2);
+    testList.head.next.next.next = new NodeGen(3);
+    const returnValue = testList.kthFromEnd(7);
+    
+    expect(returnValue).toEqual('Exception');
+  });
+
+  it('Should return "Exception" if "k" equals the length of the Linked List', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    testList.head.next = new NodeGen(1);
+    testList.head.next.next = new NodeGen(2);
+    testList.head.next.next.next = new NodeGen(3);
+    const returnValue = testList.kthFromEnd(4);
+    
+    expect(returnValue).toEqual('Exception');
+  });
+
+  it('Should return "Exception" if the Linked List is a size of 1', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    const returnValue = testList.kthFromEnd(0);
+    
+    expect(returnValue).toEqual('Only 1 value exists in the Linked List: 0');
+  });
+
+  it('Should return "Exception" if "k" is not positive when calling kthFromEnd', () => {
+    const testList = new ListGen();
+    testList.head = new NodeGen(0);
+    testList.head.next = new NodeGen(1);
+    testList.head.next.next = new NodeGen(2);
+    testList.head.next.next.next = new NodeGen(3);
+    const returnValue = testList.kthFromEnd(-3);
+    
+    expect(returnValue).toEqual('Exception');
+  });
 });
 
