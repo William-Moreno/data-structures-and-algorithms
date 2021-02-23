@@ -100,6 +100,14 @@ class LinkedList {
   }
 
   kthFromEnd(k) {
+    if(!this.head.next) {
+      return `Only 1 value exists in the Linked List: ${this.head.value}`;
+    }
+
+    if(k < 1) {
+      return 'Exception';
+    }
+
     let marker = this.head;
     let current = this.head;
 
