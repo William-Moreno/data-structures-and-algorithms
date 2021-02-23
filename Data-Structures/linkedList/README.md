@@ -2,13 +2,17 @@
 
 Implement a Linked List, and functions that allow us to append a node to the head position, search the list for a particular value and to output a string that illustrates the nodes of the entire list.
 
-  Add functions to append nodes to the end of the list as well as insert nodes at specified places within the list.
+Add functions to append nodes to the end of the list as well as insert nodes at specified places within the list.
+
+Add a function that will return the value of a node that is a specified number of nodes from the end of the list.
 
 ## Challenge
 
 Create Node and LinkedList classes that include a head property and upon instantiation create an empty Linked List. Create three different methods to insert a node to the head postion, search the list for a specified value's presence and to print a string representing all of the nodes in the Linked List.
 
 Create three new methods to append nodes to the end of the list, add a node to the list prior to a node of a certain value and add a node to the list following a node of a specified value.
+
+Create a method for the Linked List class which takes a number as a parameter and return the node's value that is that number from the end of the linked list.
 
 ## Approach & Efficiency
 
@@ -31,6 +35,14 @@ Building from the existing class, I followed the flow I used previously:
 - I refined all three methods to function correctly if the specified node was the head or tail of the linked list
 - I added an 'Exception' response when the specified node in the insertBefore and insertAfter functions did not exist within the linked list
 - I wrote tests to verify functionality of the new methods and implemented them
+
+Again working from the existing class, merely variations on the theme:
+- I started be writing the basic kthFromEnd function
+- I wrote a test to validate that the function was working properly
+- I then wrote a tests for k too long and k the same length
+- I modified the basic function to pass all three tests
+- I then wrote tests for cases where the list was one node and when k was not a positive integer
+- Then I modified the function to pass all tests written 
 
 ## API
 
@@ -66,7 +78,11 @@ This method takes in a value as an argument. It then traverses the Linked List u
 
  This method takes in a value and a new value(newVal). A new node is created with a value of newVal and then the Linked List is traversed until a node with a value that matches the value argument is reached. The new node's `.next` is set to the current node's `.next` and then the current node's `.next` is set to the new node, thereby inserting the node into the correct position in the list. If the value supplied as an argument does not exist within the Linked List, `'Exception'` is returned instead.
 
+ #### `.kthFromEnd(k)`
+
+ This method takes in a positive number (k) as an argument. The length of the list is checked first. If it is only one node it advises the user and returns the single value in a string. If the number is found to be less than 1, an `'Exception'` is returned. Two pointers `marker` and `current` are initially set to the head node. A for loop is used to advance the `marker` pointer along the nodes of the list until it reached the nod with the value of 'k'. If the list has fewer nodes than the value of 'k', an `'Exception'` is returned. After exiting the for loop the value of `marker` is checked. If it's value is null then 'k' is the same length as the list and an `'Exception'` is returned. Otherwise with both pointers starting at their current values, a while loop is implemented to run until the value of `marker` becomes null, signifying the end of the list. At that point `current` will be 'k' nodes behind it because in the loop both pointers increment. Finally, the value of `current` is returned.
+
  ## Solution
 [linked-list](linked-list.js)
 
-![linked-list challenge 6 whiteboard](../../assets/linked-list-challenge-6.png)
+![linked-list challenge 7 whiteboard](../../assets/linked-list-challenge-7.png)
