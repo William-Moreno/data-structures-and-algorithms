@@ -105,9 +105,13 @@ class LinkedList {
 
     for (let i = 0 ; i < k ; i++) {
       if(!marker) {
-        return;
+        return 'Exception';
       }
       marker = marker.next;
+    }
+
+    if (!marker) {
+      return 'Exception';
     }
 
     while(marker.next) {
@@ -118,6 +122,17 @@ class LinkedList {
     return current.value;
   }
 }
+
+
+const test = new LinkedList();
+test.head = new Node(0);
+test.head.next = new Node(1);
+test.head.next.next = new Node(2);
+test.head.next.next.next = new Node(3);
+test.head.next.next.next.next = new Node(4);
+
+console.log(test.kthFromEnd(3));
+
 
 
 module.exports = {
