@@ -98,6 +98,25 @@ class LinkedList {
     }
     return 'Exception';
   }
+
+  kthFromEnd(k) {
+    let marker = this.head;
+    let current = this.head;
+
+    for (let i = 0 ; i < k ; i++) {
+      if(!marker) {
+        return;
+      }
+      marker = marker.next;
+    }
+
+    while(marker.next) {
+      current = current.next;
+      marker = marker.next;
+    }
+
+    return current.value;
+  }
 }
 
 
