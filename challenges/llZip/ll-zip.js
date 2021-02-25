@@ -5,23 +5,6 @@ const NodeGen = master.nodeGen;
 const ListGen = master.listGen;
 
 
-
-const ll1 = new ListGen();
-ll1.head = new NodeGen(5);
-ll1.head.next = new NodeGen(10);
-ll1.head.next.next = new NodeGen(15);
-ll1.head.next.next.next = new NodeGen(20);
-ll1.head.next.next.next.next = new NodeGen(25);
-
-const ll2 = new ListGen();
-ll2.head = new NodeGen('A');
-ll2.head.next = new NodeGen('B');
-ll2.head.next.next = new NodeGen('C');
-ll2.head.next.next.next = new NodeGen('D');
-ll2.head.next.next.next.next = new NodeGen('E');
-
-
-
 function zipLists(list1, list2) {
   let ll3 = new ListGen();
   let curr1 = list1.head;
@@ -58,9 +41,6 @@ function zipLists(list1, list2) {
 
 }
 
-const zipped = zipLists(ll1, ll2);
-
-console.log(zipped.toString());
 
 module.exports = {
   zipLists: zipLists,
