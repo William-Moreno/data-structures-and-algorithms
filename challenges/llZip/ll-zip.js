@@ -17,8 +17,8 @@ const ll2 = new ListGen();
 ll2.head = new NodeGen('A');
 ll2.head.next = new NodeGen('B');
 ll2.head.next.next = new NodeGen('C');
-// ll2.head.next.next.next = new NodeGen('B');
-// ll2.head.next.next.next.next = new NodeGen('C');
+ll2.head.next.next.next = new NodeGen('D');
+ll2.head.next.next.next.next = new NodeGen('E');
 
 
 
@@ -62,3 +62,6 @@ const zipped = zipLists(ll1, ll2);
 
 console.log(zipped.toString());
 
+module.exports = {
+  zipLists: zipLists,
+};
