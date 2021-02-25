@@ -11,3 +11,4 @@ Code Challenge Examples
 - [linked-list: insert, includes, toString](Data-Structures/linkedList/linked-list.js)
 - [linked-list: append, insertBefore, insertAfter](Data-Structures/linkedList/linked-list.js)
 - [linked-list: kthFromEnd](Data-Structures/linkedList/linked-list.js)
+- [linked-list: zipLists](challenges/llZip/ll-zip.js)
