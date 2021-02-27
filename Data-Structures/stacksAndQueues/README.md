@@ -25,7 +25,7 @@ Create a `Stack` class which has a front property that creats an empty queue
 
   ## API
 
-  The methods available to my LinkedList are:
+  The methods available to my Stack are:
 - `.insert(value)`
 - `.includes(value)`
 - `.toString()`
@@ -33,6 +33,10 @@ Create a `Stack` class which has a front property that creats an empty queue
 - `.insertBefore(value, newVal)`
 - `.insertAfter(value, newVal)`
 - `.kthFromEnd(k)`
+  
+  The methods available to my Queue are:
+
+  
 
 #### `.insert(value)`
 
