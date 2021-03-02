@@ -12,6 +12,9 @@ class AnimalShelter {
   }
 
   enqueue(animal){
+    if(animal.type !== 'cat' && animal.type !== 'dog'){
+      return 'Sorry, we only accept cats or dogs';
+    }
 
     while(this.front.top){
       let temp = this.front.pop();
@@ -59,5 +62,5 @@ class AnimalShelter {
 
 
 module.exports = {
-  Shelter: AnimalShelter,
+  AnimalShelter: AnimalShelter,
 };

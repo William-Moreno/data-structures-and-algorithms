@@ -1,7 +1,7 @@
 'use strict';
 
-const shelter = require('../fifo-animal-shelter.js');
-const Shelter = shelter.Shelter();
+const master = require('../fifo-animal-shelter.js');
+const Shelter = master.AnimalShelter;
 
 let emptyShelter = new Shelter();
 let testShelter = new Shelter();
@@ -50,6 +50,12 @@ describe('Testing AnimalShelter constructor/methods', () => {
     expect(onlyValue.name).toEqual('Random');
   });
 
+  it(`Should return "Sorry, we only accept cats or dogs" when using enqueueing a bird`, () => {
+    const response = testShelter.enqueue({type: 'bird', name: 'Tweety'});
+
+    expect(response).toEqual('Sorry, we only accept cats or dogs');
+  });
+
   it(`Should dequeue the dog closest to the front of the AnimalShelter using dequeue('dog')`, () => {
     let frontValue = testShelter.dequeue('dog');
     let newFrontValue = testShelter.front.peek();
@@ -74,9 +80,9 @@ describe('Testing AnimalShelter constructor/methods', () => {
     expect(newFrontValue.name).toEqual('Dobby');
   });
 
-  it('Should return "Exception - Queue is empty" if dequeue is called on an empty pseudoqueue', () => {
+  it('Should return "Sorry, the animal shelter is empty" if dequeue is called on an empty pseudoqueue', () => {
     let response = emptyShelter.dequeue('cat');
 
-    expect(response).toEqual('Exception - Queue is empty');
+    expect(response).toEqual('Sorry, the animal shelter is empty');
   });
 });
