@@ -1,9 +1,7 @@
 'use strict';
 
 const master = require('../../Data-Structures/stacksAndQueues/stacks-and-queues.js');
-const NodeGen = master.nodeGen;
 const StackGen = master.StackGen;
-const QueueGen = master.QueueGen;
 
 class PseudoQueue{
   constructor() {

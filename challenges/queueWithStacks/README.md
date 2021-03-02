@@ -1,4 +1,4 @@
-# Stacks and Queues
+# Queue with Stacks
 ---
 
 Create a PseudoQueue class that emulates a Queue class utilizing two Stack objects. Create methods that replicate the enqueue and dequeue methods of a standard queue.
