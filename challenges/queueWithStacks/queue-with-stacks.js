@@ -9,8 +9,8 @@ class PseudoQueue{
   constructor() {
     this.faceUp = new StackGen();
     this.faceDown = new StackGen();
-    this.rear = this.faceDown.top;
-    this.front = this.faceUp.top;
+    // this.rear = this.faceDown.top;
+    // this.front = this.faceUp.top;
     
   }
 
@@ -38,29 +38,6 @@ class PseudoQueue{
   }
 
 }
-
-
-// let looker = new PseudoQueue();
-
-// console.log(looker);
-
-// looker.enqueue(2);
-// console.log(looker);
-
-// looker.enqueue(4);
-// console.log(looker);
-
-// let temp = looker.dequeue();
-// console.log(looker);
-// console.log(temp);
-
-
-// looker.enqueue('A');
-// console.log(looker);
-
-// let temp2 = looker.dequeue();
-// console.log(looker);
-// console.log(temp2);
 
 
 module.exports = {
