@@ -12,3 +12,5 @@ Code Challenge Examples
 - [linked-list: append, insertBefore, insertAfter](Data-Structures/linkedList/linked-list.js)
 - [linked-list: kthFromEnd](Data-Structures/linkedList/linked-list.js)
 - [linked-list: zipLists](challenges/llZip/ll-zip.js)
+- [Stacks and Queues](Data-Structures/stacksAndQueues/stacks-and-queues.js)
+- [queue-with-stacks](challenges/queueWithStacks/queue-with-stacks.js)
