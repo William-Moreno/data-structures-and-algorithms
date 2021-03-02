@@ -30,6 +30,10 @@ class AnimalShelter {
       return 'Sorry, the animal shelter is empty';
     }
 
+    if(pref !== 'cat' && pref !== 'dog') {
+      return this.front.pop();
+    }
+
     while(this.front.top){
       let checker = this.front.peek();
       if(checker.type === pref) {
@@ -53,16 +57,7 @@ class AnimalShelter {
   }
 }
 
-let as = new AnimalShelter();
-as.enqueue({type: 'cat', name: 'Kreacher'});
-as.enqueue({type: 'cat', name: 'Dobby'});
-as.enqueue({type: 'dog', name: 'Sammy'});
-as.enqueue({type: 'cat', name: 'Flerken'});
-as.enqueue({type: 'dog', name: 'Lady'});
-as.enqueue({type: 'dog', name: 'Tramp'});
-as.enqueue({type: 'cat', name: 'Loki'});
 
-console.log(as.dequeue('cat'));
-console.log(as.dequeue('dog'));
-console.log(as.dequeue('dog'));
-console.log(as.dequeue('cat'));
+module.exports = {
+  Shelter: AnimalShelter,
+};
