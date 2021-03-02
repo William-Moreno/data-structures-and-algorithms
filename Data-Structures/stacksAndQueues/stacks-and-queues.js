@@ -20,7 +20,6 @@ class Stack{
     let pushedNode = new Node(value);
     if(this.isEmpty()){
       this.top = pushedNode;
-      return;
     } else {
       pushedNode.next = this.top;
       this.top = pushedNode;
