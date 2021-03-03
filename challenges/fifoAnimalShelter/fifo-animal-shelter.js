@@ -3,12 +3,10 @@
 const master = require('../../Data-Structures/stacksAndQueues/stacks-and-queues.js');
 const StackGen = master.StackGen;
 
-
 class AnimalShelter {
   constructor() {
     this.front = new StackGen();
     this.back = new StackGen();
-
   }
 
   enqueue(animal){
@@ -59,7 +57,6 @@ class AnimalShelter {
 
   }
 }
-
 
 module.exports = {
   AnimalShelter: AnimalShelter,
