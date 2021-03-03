@@ -15,4 +15,4 @@ Code Challenge Examples
 - [Stacks and Queues](Data-Structures/stacksAndQueues/stacks-and-queues.js)
 - [queue-with-stacks](challenges/queueWithStacks/queue-with-stacks.js)
 - [fifo-animal-shelter](challenges/fifoAnimalShelter/fifo-animal-shelter.js)
-- [multi-bracket-validation](challenges/multiBracketValidation)
+- [multi-bracket-validation](challenges/multiBracketValidation/multi-bracket-validation.js)
