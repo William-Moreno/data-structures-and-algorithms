@@ -29,14 +29,7 @@ const bracketValidation = (str) => {
 
 };
 
-console.log(bracketValidation('{}'));
-console.log(bracketValidation('('));
-console.log(bracketValidation('[{()[]}()]'));
-console.log(bracketValidation('[{()[]}()'));
-console.log(bracketValidation(')[]}()]'));
-console.log(bracketValidation('[{(interference)[]}(tricky)]'));
-
 
 module.exports = {
-  bracketValidation,
+  validator: bracketValidation,
 };
