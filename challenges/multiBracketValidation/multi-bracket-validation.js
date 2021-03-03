@@ -3,13 +3,13 @@
 const master = require('../../Data-Structures/stacksAndQueues/stacks-and-queues.js');
 const Stack = master.StackGen;
 
-const bracketValidation = (str) => {
+const bracketValidation = (input) => {
 
   const Validator = new Stack();
 
-  for(let i = 0 ; i < str.length ; i++) {
+  for(let i = 0 ; i < input.length ; i++) {
 
-    let character = str.charAt(i);
+    let character = input.charAt(i);
 
     if(character === '(' || character === '[' || character === '{'){
       Validator.push(character);
