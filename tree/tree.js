@@ -14,6 +14,9 @@ class Tree {
   }
 
   preOrder() {
+    if(this.root === null) {
+      return 'Exception - Tree contains no values';
+    }
     const array = [];
 
     const innerPreOrder = (node) => {
@@ -35,6 +38,9 @@ class Tree {
   }
 
   inOrder() {
+    if(this.root === null) {
+      return 'Exception - Tree contains no values';
+    }
     const array = [];
 
     const innerInOrder = (node) => {
@@ -57,6 +63,9 @@ class Tree {
   }
 
   postOrder() {
+    if(this.root === null) {
+      return 'Exception - Tree contains no values';
+    }
     const array = [];
 
     const innerPostOrder = (node) => {
@@ -82,6 +91,7 @@ class Tree {
 }
 
 class BinarySearchTree extends Tree {
+
 
   add(value) {
     let newNode = new Node(value);
@@ -155,38 +165,13 @@ class BinarySearchTree extends Tree {
 
     return isInTree;
   }
+
+  
 }
 
-const tree = new Tree();
 
-tree.root = new Node(5);
-tree.root.left = new Node(10);
-tree.root.left.left = new Node(0);
-tree.root.left.right = new Node(20);
-tree.root.right = new Node(15);
-tree.root.right.right = new Node(25);
-
-
-console.log(tree.preOrder());
-console.log(tree.inOrder());
-console.log(tree.postOrder());
-
-
-const bst = new BinarySearchTree();
-const third = bst.contains(30);
-bst.add(30);
-bst.add(2);
-bst.add(32);
-bst.add(4);
-bst.add(64);
-bst.add(8);
-bst.add(128);
-bst.add(16);
-
-console.log(bst.inOrder());
-
-const first = bst.contains(64);
-const second = bst.contains(5);
-console.log(first);
-console.log(second);
-console.log(third);
+module.exports = {
+  Node: Node,
+  Tree: Tree,
+  BST: BinarySearchTree,
+};
