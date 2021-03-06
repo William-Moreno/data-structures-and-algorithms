@@ -79,47 +79,21 @@ class Tree {
 
   }
 
-  traverseWithStack() {
-    let current = this.root;
-    let stack = [];
-    stack.push(current);
+  
+}
 
-    while(stack.length) {
-
-      console.log(current.value);
-
-      // reverse due to stack
-      if(current.right) {
-        stack.push(current.right);
-      }
-      if(current.left){
-        stack.push(current.left);
-      }
-
-      current = stack.pop();
-    }
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
   }
 
-  breadth() {
+  add(value) {
 
-    let current = null;
-    let queue = [];
+  }
 
-    queue.unshift(this.root);
 
-    while(queue.length) {
+  contains(value) {
 
-      current = queue.pop();
-      console.log(current.value);
-
-      if (current.left) {
-        queue.unshift(current.left);
-      }
-      if(current.right) {
-        queue.unshift(current.right);
-      }
-
-    }
   }
 }
 
