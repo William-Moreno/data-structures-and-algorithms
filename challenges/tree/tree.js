@@ -195,18 +195,6 @@ class BinarySearchTree extends BinaryTree {
   
 }
 
-const tree = new BinaryTree();
-
-tree.root = new Node(3425);
-tree.root.left = new Node(345);
-tree.root.left.left = new Node(0);
-tree.root.left.right = new Node(2143);
-tree.root.right = new Node(56);
-tree.root.right.right = new Node(14);
-
-console.log(tree.preOrder());
-console.log(tree.findMaximumValue());
-
 module.exports = {
   Node: Node,
   BinaryTree: BinaryTree,
