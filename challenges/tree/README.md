@@ -3,6 +3,8 @@
 
 Create class for a `Node`. Create `BinaryTree` class with methods `preOrder()`, `inOrder()` and `postOrder`. Create a `BinarySearchTree` with methods `add(value)`  and `contains(value)`.
 
+Create a `BinaryTree` instance method that finds the maximum value present within the tree
+
 ## Challenge
 
 Create classes for `Node`, `BinaryTree` and `BinarySearchTree`. Create the following methods for the `BinaryTree` class:
@@ -13,6 +15,8 @@ Create the following methods for `BinarySearchTree` class:
 - `add(value)` - properly inserts a given value into the tree at the proper location
 - `contains(value)` - traverses the tree and returns a boolean indicating if the tree contains the value or not
 
+Create an instance method `findMaximumValue` that returns the maximum value stored in the tree, assuming all values stored in the BinaryTree are numeric.
+
 ## Approach & Efficiency
 
 - created `Node` class
@@ -20,6 +24,11 @@ Create the following methods for `BinarySearchTree` class:
 - created three methods for `BinaryTree` class traversal
 - created `BinarySearchTree` class
 - create two methods to satisfy the `BinarySearchTree` method requirements
+- created tests to fulfil requirements
+
+- diagramed problem solution
+- created `findMaximumValue` method
+- created tests to validate functionality
 
 
 ## API
