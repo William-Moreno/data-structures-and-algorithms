@@ -16,22 +16,37 @@ Create the following methods for `BinarySearchTree` class:
 ## Approach & Efficiency
 
 - created `Node` class
-- created `Tree` class
-- created three methods for `Tree` class traversal
+- created `BinaryTree` class
+- created three methods for `BinaryTree` class traversal
 - created `BinarySearchTree` class
 - create two methods to satisfy the `BinarySearchTree` method requirements
 
 
 ## API
 
-- `preOrder()` - traverses the tree and returns an array of the contained values in pre-order depth first method.
+- `BinaryTree`
+  - `preOrder()`
+  - `inOrder()`
+  - `postOrder()`
+  - `findMaximumValue()`
+- `BinarySearchTree`
+  - `add(value)`
+  - `contains(value)`
 
-- `inOrder()` - traverses the tree and returns an array of the contained values in pre-order depth first method.
+- `BinaryTree`
+  - `preOrder()` - traverses the BinaryTree and returns an array of the contained values in pre-order depth first method.
 
-- `postOrder()` - traverses the tree and returns an array of the contained values in pre-order depth first method.
+  - `inOrder()` - traverses the BinaryTree and returns an array of the contained values in pin-order depth first method.
 
-- `add(value)` - traverses a BinarySearchTree and inserts the value at the proper location using recursion.
+  - `postOrder()` - traverses the BinaryTree and returns an array of the contained values in post-order depth first method.
 
-- `contains(value)` - traverses the BinarySearchTree to determine if it contains the supplied value and returns a boolean.
+  - `findMaximumValue()` - traverse the BinaryTree in a pre-order method comparing the values of the nodes and setting a pre-declared variable to the higher value of each comparison. Following the traversal the variable containing the highest value in the BinaryTree is returned.
+
+![Whiteboard Example](../../assets/find-maximum-value.png)
+
+- `BinarySearchTree`
+  - `add(value)` - traverses a BinarySearchTree and inserts the value at the proper location using recursion.
+
+  - `contains(value)` - traverses the BinarySearchTree to determine if it contains the supplied value and returns a boolean.
 
 
