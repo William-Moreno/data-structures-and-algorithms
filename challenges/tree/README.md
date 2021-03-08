@@ -33,6 +33,8 @@ Create an instance method `findMaximumValue` that returns the maximum value stor
 
 ## API
 
+[code](./tree.js)
+
 - `BinaryTree`
   - `preOrder()`
   - `inOrder()`
