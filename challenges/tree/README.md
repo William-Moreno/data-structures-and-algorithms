@@ -40,7 +40,7 @@ Create the following methods for `BinarySearchTree` class:
 
   - `postOrder()` - traverses the BinaryTree and returns an array of the contained values in post-order depth first method.
 
-  - `findMaximumValue()` - traverse the BinaryTree in a pre-order method comparing the values of the nodes and setting a pre-declared variable to the higher value of each comparison. Following the traversal the variable containing the highest value in the BinaryTree is returned.
+  - `findMaximumValue()` - traverses the BinaryTree in a pre-order method comparing the values of the nodes and setting a pre-declared variable to the higher value of each comparison. Following the traversal the variable containing the highest value in the BinaryTree is returned.
 
 ![Whiteboard Example](../../assets/find-maximum-value.png)
 
