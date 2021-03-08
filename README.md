@@ -17,3 +17,4 @@ Code Challenge Examples
 - [fifo-animal-shelter](challenges/fifoAnimalShelter/fifo-animal-shelter.js)
 - [multi-bracket-validation](challenges/multiBracketValidation/multi-bracket-validation.js)
 - [trees](tree/tree.js)
+- [find-maximum-binary-tree](tree/tree.js)
