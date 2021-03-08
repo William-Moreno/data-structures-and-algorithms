@@ -8,7 +8,7 @@ class Node {
   }
 }
 
-class Tree {
+class BinaryTree {
   constructor() {
     this.root = null;
   }
@@ -88,9 +88,35 @@ class Tree {
 
   }
 
+  findMaximumValue() {
+    if(this.root === null || isNaN(this.root.value)) {
+      return 'Exception - Tree contains no numeric values';
+    }
+
+    let currentMaximum = this.root.value;
+
+    const findMaxPreOrder = (node) => {
+
+      if(node.value > currentMaximum) {
+        currentMaximum = node.value;
+      }
+
+      if(node.left) {
+        findMaxPreOrder(node.left);
+      }
+      if(node.right) {
+        findMaxPreOrder(node.right);
+      }
+    };
+
+    let current = this.root;
+    findMaxPreOrder(current);
+    return currentMaximum;
+  }
+
 }
 
-class BinarySearchTree extends Tree {
+class BinarySearchTree extends BinaryTree {
 
 
   add(value) {
@@ -169,9 +195,8 @@ class BinarySearchTree extends Tree {
   
 }
 
-
 module.exports = {
   Node: Node,
-  Tree: Tree,
+  BinaryTree: BinaryTree,
   BST: BinarySearchTree,
 };

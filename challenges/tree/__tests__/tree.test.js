@@ -2,10 +2,10 @@
 
 const forest = require('../tree.js');
 const Node = forest.Node;
-const Tree = forest.Tree;
+const BinaryTree = forest.BinaryTree;
 const BST = forest.BST;
 
-const tree = new Tree();
+const tree = new BinaryTree();
 
 beforeEach(() => {
 
@@ -18,22 +18,22 @@ beforeEach(() => {
 
 });
 
-describe('Testing Tree class constructor an methods', () => {
+describe('Testing BinaryTree class constructor an methods', () => {
   it('Should instantiate an empty tree successfully', () => {
-    const testTree = new Tree();
+    const testTree = new BinaryTree();
 
     expect(testTree.root).toBeFalsy();
   });
 
-  it('Should instantiate a tree with a single root node', () => {
-    const testTree = new Tree();
+  it('Should instantiate a BinaryTree with a single root node', () => {
+    const testTree = new BinaryTree();
     testTree.root = new Node(5);
 
     expect(testTree.root.value).toEqual(5);
   });
 
   it('Should add a left child and a right child to a single root node', () => {
-    const testTree = new Tree();
+    const testTree = new BinaryTree();
     testTree.root = new Node(5);
     testTree.root.left = new Node(10);
     testTree.root.right = new Node(25);
@@ -59,5 +59,29 @@ describe('Testing Tree class constructor an methods', () => {
     const response = tree.postOrder();
 
     expect(response).toEqual([ 0, 20, 10, 25, 15, 5 ]);
+  });
+
+  it('Should return the maximum value within a BinaryTree with findMaximumValue()', () => {
+    const maxTree = new BinaryTree();
+    maxTree.root = new Node(24);
+    maxTree.root.left = new Node(36);
+    maxTree.root.left.left = new Node(30);
+    maxTree.root.left.right = new Node(6);
+    maxTree.root.right = new Node(60);
+    maxTree.root.right.left = new Node(42);
+    const returnValue = maxTree.findMaximumValue();
+
+    expect(returnValue).toEqual(60);
+  });
+
+  it('Should return "Exception - Tree contains no numeric values" if BinaryTree has no values or the root is not a number when calling findMaximumValue()', () => {
+    const testOneBST = new BST();
+    const testTwoBST = new BST();
+    testTwoBST.root = new Node('Not a Number');
+    const firstCase = testOneBST.findMaximumValue();
+    const secondCase = testTwoBST.findMaximumValue();
+
+    expect(firstCase).toEqual('Exception - Tree contains no numeric values');
+    expect(secondCase).toEqual('Exception - Tree contains no numeric values');
   });
 });

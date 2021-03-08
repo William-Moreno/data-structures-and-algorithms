@@ -16,4 +16,5 @@ Code Challenge Examples
 - [queue-with-stacks](challenges/queueWithStacks/queue-with-stacks.js)
 - [fifo-animal-shelter](challenges/fifoAnimalShelter/fifo-animal-shelter.js)
 - [multi-bracket-validation](challenges/multiBracketValidation/multi-bracket-validation.js)
-- [trees](tree/tree.js)
+- [trees](challenges/tree/tree.js)
+- [find-maximum-binary-tree](challenges/tree/tree.js)
