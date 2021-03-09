@@ -6,6 +6,7 @@ const BinaryTree = forest.BinaryTree;
 const BST = forest.BST;
 
 const tree = new BinaryTree();
+const emptyTree = new BinaryTree();
 
 beforeEach(() => {
 
@@ -75,13 +76,25 @@ describe('Testing BinaryTree class constructor an methods', () => {
   });
 
   it('Should return "Exception - Tree contains no numeric values" if BinaryTree has no values or the root is not a number when calling findMaximumValue()', () => {
-    const testOneBST = new BST();
-    const testTwoBST = new BST();
+    const testOneBST = new BinaryTree();
+    const testTwoBST = new BinaryTree();
     testTwoBST.root = new Node('Not a Number');
     const firstCase = testOneBST.findMaximumValue();
     const secondCase = testTwoBST.findMaximumValue();
 
     expect(firstCase).toEqual('Exception - Tree contains no numeric values');
     expect(secondCase).toEqual('Exception - Tree contains no numeric values');
+  });
+
+  it('Should successfully return an array in correct order using breadthFirst()', () => {
+    const response = tree.breadthFirst();
+
+    expect(response).toEqual([5, 10, 15, 0, 20, 25]);
+  });
+
+  it('Should return "Exception - Tree contains no values" if BinaryTree contains no values when breadthFirst() is called', () => {
+    const response = emptyTree.breadthFirst();
+
+    expect(response).toEqual('Exception - Tree contains no values');
   });
 });
