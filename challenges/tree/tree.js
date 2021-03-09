@@ -1,5 +1,6 @@
 'use strict';
 
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -84,6 +85,33 @@ class BinaryTree {
 
     let current = this.root;
     innerPostOrder(current);
+    return array;
+
+  }
+
+  breadthFirst() {
+    if(this.root === null) {
+      return 'Exception - Tree contains no values';
+    }
+    const array = [];
+    const queue = [];
+    queue.push(this.root);
+
+    while(queue.length !== 0) {
+      let current = queue[0];
+
+      if(current.left) {
+        queue.push(current.left);
+      }
+
+      if(current.right) {
+        queue.push(current.right);
+      }
+
+      let tempNode = queue.shift();
+      array.push(tempNode.value);
+    }
+
     return array;
 
   }
@@ -194,6 +222,7 @@ class BinarySearchTree extends BinaryTree {
 
   
 }
+
 
 module.exports = {
   Node: Node,

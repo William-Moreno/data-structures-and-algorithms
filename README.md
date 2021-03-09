@@ -18,3 +18,4 @@ Code Challenge Examples
 - [multi-bracket-validation](challenges/multiBracketValidation/multi-bracket-validation.js)
 - [trees](challenges/tree/tree.js)
 - [find-maximum-binary-tree](challenges/tree/tree.js)
+- [breadth-first-traversal](challenges/tree/tree.js)
