@@ -75,9 +75,12 @@ const karyTree = new KaryTree(3);
 
 karyTree.root = new KaryNode(5, karyTree.k);
 karyTree.root.children[0] = new KaryNode(15, karyTree.k);
-karyTree.root.children[1] = new KaryNode(25, karyTree.k);
+karyTree.root.children[1] = new KaryNode(24, karyTree.k);
 karyTree.root.children[2] = new KaryNode(11, karyTree.k);
 karyTree.root.children[0].children[0] = new KaryNode(9, karyTree.k);
+karyTree.root.children[0].children[1] = new KaryNode(60, karyTree.k);
+karyTree.root.children[2].children[0] = new KaryNode(35, karyTree.k);
+karyTree.root.children[2].children[1] = new KaryNode(43, karyTree.k);
 
 karyTree.breadth();
 const convertedTree = fizzBuzzTree(karyTree);
