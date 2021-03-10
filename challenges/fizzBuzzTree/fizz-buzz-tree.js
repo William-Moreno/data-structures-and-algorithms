@@ -17,13 +17,14 @@ class KaryTree {
 
     let current = null;
     let queue = [];
+    let array = [];
 
     queue.unshift(this.root);
 
     while (queue.length) {
 
       current = queue.pop();
-      console.log(current.value);
+      array.push(current.value);
 
 
       for (let i = 0; i < current.children.length; i++) {
@@ -32,6 +33,8 @@ class KaryTree {
         }
       }
     }
+
+    return array;
 
   }
 }
@@ -49,7 +52,6 @@ function fizzBuzzTree(kAryTree) {
 
   while(queue.length) {
     current = queue.pop();
-    let fizzBuzz = '';
 
     if(current.value % 15 === 0) {
       current.value = 'FizzBuzz';
@@ -64,24 +66,16 @@ function fizzBuzzTree(kAryTree) {
     for (let i = 0; i < current.children.length; i++) {
       if(current.children[i]) {
         queue.unshift(current.children[i]);
-      }
+      } 
     }
   }
 
   return returnTree;
 }
 
-const karyTree = new KaryTree(3);
 
-karyTree.root = new KaryNode(5, karyTree.k);
-karyTree.root.children[0] = new KaryNode(15, karyTree.k);
-karyTree.root.children[1] = new KaryNode(24, karyTree.k);
-karyTree.root.children[2] = new KaryNode(11, karyTree.k);
-karyTree.root.children[0].children[0] = new KaryNode(9, karyTree.k);
-karyTree.root.children[0].children[1] = new KaryNode(60, karyTree.k);
-karyTree.root.children[2].children[0] = new KaryNode(35, karyTree.k);
-karyTree.root.children[2].children[1] = new KaryNode(43, karyTree.k);
-
-karyTree.breadth();
-const convertedTree = fizzBuzzTree(karyTree);
-convertedTree.breadth();
+module.exports = {
+  KaryNode: KaryNode,
+  KaryTree: KaryTree,
+  fizzBuzzTree: fizzBuzzTree,
+};
