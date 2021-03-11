@@ -4,6 +4,7 @@ const forest = require('../fizz-buzz-tree.js');
 const KaryNode = forest.KaryNode;
 const KaryTree = forest.KaryTree;
 const fizzBuzzTree = forest.fizzBuzzTree;
+const breadth = forest.breadthFirst;
 
 const karyTree = new KaryTree(3);
 const nonTree = new KaryTree(3);
@@ -35,7 +36,7 @@ describe('Testing fizzBuzzTree function', () => {
 
   it('Should create a new tree with the same structure as the original', () => {
     const testTree = fizzBuzzTree(karyTree);
-    const response = testTree.breadth();
+    const response = breadth(testTree);
 
     expect(response).toEqual(['Buzz', 'FizzBuzz', 'Fizz', '11', 'Fizz', 'FizzBuzz', 'Buzz', '43', 'FizzBuzz']);
   });
