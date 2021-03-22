@@ -53,3 +53,25 @@ The for loop ends and the array has been sorted:
 
 - **[ 4, 8, 15, 16, 23, 42 ]**
 
+## The Code
+
+The complete code for this sort function looks like:
+
+```JavaScript
+const insertionSort = (arr) => {
+  for(let i = 1 ; i < arr.length ; i++) {
+    let j = i-1;
+    let temp = arr[i];
+
+    while( j >= 0 && temp < arr[j]) {
+      arr[j+1] = arr[j];
+      j--;
+    }
+
+    arr[j+1] = temp;
+  }
+  return arr;
+};
+```
+
+and it can be found [here](./insertion-sort.js)
