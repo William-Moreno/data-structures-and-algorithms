@@ -20,3 +20,4 @@ Code Challenge Examples
 - [find-maximum-binary-tree](challenges/tree/tree.js)
 - [breadth-first-traversal](challenges/tree/tree.js)
 - [fizz-buzz-tree](challenges/fizzBuzzTree/fizz-buzz-tree.js)
+- [insertion sort](insertionSort/BLOG.md)
