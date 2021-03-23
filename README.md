@@ -21,3 +21,4 @@ Code Challenge Examples
 - [breadth-first-traversal](challenges/tree/tree.js)
 - [fizz-buzz-tree](challenges/fizzBuzzTree/fizz-buzz-tree.js)
 - [insertion sort](insertionSort/BLOG.md)
+- [merge sort](mergeSort/BLOG.md)
