@@ -1,7 +1,6 @@
 'use strict';
 
 const mergeSort = (arr) => {
-  console.log('splitting ', arr);
   let n = arr.length;
 
   if(n > 1) {
@@ -49,16 +48,8 @@ const merge = (left, right, arr) => {
     j++;
     k++;
   }
-  console.log('Merging', arr);
 
 };
-
-
-let test = [8, 4, 23, 42, 16, 15];
-
-const sorted = mergeSort(test);
-
-console.log(sorted);
 
 
 module.exports = {
