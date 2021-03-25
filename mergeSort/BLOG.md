@@ -1,6 +1,6 @@
 # Merge Sort
 ---
-Insertion sort is an array sorting algorithm which recursively splits the original array in half until each resulting half of a split array has one index or no indexes. At this point, each division is *'sorted'* by definition because an array of 1 element is always in order.
+Merge sort is an array sorting algorithm which recursively splits the original array in half until each resulting half of a split array has one index or no indexes. At this point, each division is *'sorted'* by definition because an array of 1 element is always in order.
 
 Next the singleton arrays are recombined in the same manner as they were separated, with one key difference. The values of the current two arrays being recombined are iterated over and the lowest value is placed first in the next larger array. In this manner, as the recombining arrays grow from 1s to 2s to 4s to 8s in length, the next larger resulting arrays are always in sorted order.
 
