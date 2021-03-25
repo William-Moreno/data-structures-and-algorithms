@@ -22,3 +22,4 @@ Code Challenge Examples
 - [fizz-buzz-tree](challenges/fizzBuzzTree/fizz-buzz-tree.js)
 - [insertion sort](insertionSort/BLOG.md)
 - [merge sort](mergeSort/BLOG.md)
+- [quick sort](quickSort/BLOG.md)
