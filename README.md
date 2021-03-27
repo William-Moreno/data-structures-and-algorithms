@@ -23,3 +23,4 @@ Code Challenge Examples
 - [insertion sort](insertionSort/BLOG.md)
 - [merge sort](mergeSort/BLOG.md)
 - [quick sort](quickSort/BLOG.md)
+- [Hashtables](hashtable/hashtable.js)
