@@ -12,21 +12,20 @@ class LinkedList {
     this.head = null;
   }
 
-  insert(value) {
-    let node = new Node(value);
-    if(this.head === null) {
-      this.head = node;
-      return;
+  append(value) {
+    let appendedNode = new Node(value);
+
+    if(!this.head) {
+      this.head = appendedNode;
+      return this.head;
     }
 
     let current = this.head;
 
-    while(current.next) {
+    while(current.next !== null) {
       current = current.next;
     }
-
-    current.next = node;
-
+    current.next = appendedNode;
   }
 
   includes(key) {
@@ -68,7 +67,7 @@ class HashTable {
     }
 
     let data = { [key]: value };
-    this.buckets[hash].insert(data);
+    this.buckets[hash].append(data);
   }
 
   contains(key) {
