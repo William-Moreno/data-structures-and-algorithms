@@ -24,3 +24,4 @@ Code Challenge Examples
 - [merge sort](mergeSort/BLOG.md)
 - [quick sort](quickSort/BLOG.md)
 - [Hashtables](hashtable/hashtable.js)
+- [repeated-word](repeatedWord/repeated-word.js)
