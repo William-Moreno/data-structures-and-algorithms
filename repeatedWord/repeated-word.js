@@ -34,7 +34,7 @@ const repeatedWord = (string) => {
     return recurArray[0].word;
   }
 
-  return 'No duplicdated words found';
+  return 'No duplicated words found';
 };
 
 module.exports = {
