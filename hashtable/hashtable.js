@@ -30,16 +30,24 @@ class LinkedList {
 
   includes(key) {
     let current = this.head;
+    let valueArray = [];
 
     while(current) {
       if(current.value){
         let objectKey = Object.keys(current.value);
         if(key === objectKey[0]) {
-          return (current.value[objectKey[0]]);
+          valueArray.push(current.value[objectKey[0]]);
         }
       }
       current = current.next;
     }
+
+    if(valueArray.length > 1) {
+      return valueArray;
+    } else if(valueArray.length === 1) {
+      return valueArray[0];
+    }
+
     return null;
   }
 }
@@ -85,8 +93,8 @@ class HashTable {
     let hash = this.hash(key);
 
     if(this.buckets[hash]) {
-      let test = this.buckets[hash].includes(key);
-      return test;
+      let keyValue = this.buckets[hash].includes(key);
+      return keyValue;
     } else {
       return null;
     }
