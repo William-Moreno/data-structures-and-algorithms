@@ -25,3 +25,4 @@ Code Challenge Examples
 - [quick sort](quickSort/BLOG.md)
 - [Hashtables](hashtable/hashtable.js)
 - [repeated-word](repeatedWord/repeated-word.js)
+- [tree-intersection](treeIntersection/tree-intersection.js)
