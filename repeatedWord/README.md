@@ -1,4 +1,4 @@
-# Hashtables
+# Repeated Word
 
 Write a function that returns the first word to occur more than once.
 
