@@ -44,8 +44,10 @@ function fizzBuzzTree(kAryTree) {
     return 'Exception - Tree contains no values or non-numeric values';
   }
 
+  // brute force method to avoid mutating original tree
   let transfer = JSON.stringify(kAryTree);
   const returnTree = JSON.parse(transfer);
+
   let current;
   let queue = [];
 
