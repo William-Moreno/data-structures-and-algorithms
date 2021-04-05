@@ -81,7 +81,7 @@ class Graph {
   }
 
   breadthFirst(vertex) {
-    if(!this.size()) {
+    if(!this.adjacencyList.has(vertex) || !this.size()) {
       return null;
     }
 
@@ -106,38 +106,13 @@ class Graph {
           continue;
         } else { 
           visited.add(neighborVertex);
-          valueArray.push({ neighbor: neighborVertex.value, weight: neighbor.weight });
+          valueArray.push(neighborVertex.value);
           queue.unshift(neighborVertex);
         }
       }
     }
 
     return valueArray;
-  }
-
-  depthFirst(vertex) {
-    if(!this.size()) {
-      return null;
-    }
-
-    const visitedVertices = new Set();
-
-    visitedVertices.add(vertex);
-    const traverse = (current, visited) => {
-
-      visited.add(current);
-
-      const neighbors = this.getNeighbors(current);
-
-      for (let neighbor of neighbors) {
-        if (!visited.has(neighbor.vertex)) {
-          traverse(neighbor.vertex, visited);
-        }
-      }
-    };
-
-    traverse(vertex, visitedVertices);
-    return visitedVertices;
   }
 }
 
