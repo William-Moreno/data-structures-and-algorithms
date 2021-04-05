@@ -54,4 +54,3 @@ The graph should be represented as an adjacency list, and should include the fol
 [code](./graph.js)
 
 ![whiteboard 1](../assets/graphs.PNG)
-![whiteboard 2](../assets/breadthDepth.PNG)
