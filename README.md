@@ -29,3 +29,4 @@ Code Challenge Examples
 - [left-join](leftJoin/left-join.js)
 - [graphs](graph/graph.js)
 - [breadth-first-graph-traversal](breadthFirst/breadth-first.js)
+- [get-edge](getEdge/get-edge.js)
