@@ -49,24 +49,6 @@ class Graph {
 
   }
 
-  getEdges() {
-    let tempArray = [];
-    let tempSize = this.size();
-
-    if(!tempSize) {
-      return null;
-    }
-
-    const nodesInGraph = this.adjacencyList.keys();
-    for(let i = 0; i < tempSize ; i++) {
-      let temp = (nodesInGraph.next().value.value);
-      tempArray.push(temp);
-    }
-    return tempArray;
-
-  }
-
-
   size() {
     return this.adjacencyList.size;
   }
@@ -74,7 +56,7 @@ class Graph {
 
   getNeighbors(vertex) {
     if (!this.adjacencyList.has(vertex)) {
-      throw new Error(`No neighbors found for ${vertex}`);
+      return null;
     }
 
     return [...this.adjacencyList.get(vertex)];
