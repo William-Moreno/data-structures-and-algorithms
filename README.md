@@ -30,3 +30,4 @@ Code Challenge Examples
 - [graphs](graph/graph.js)
 - [breadth-first-graph-traversal](breadthFirst/breadth-first.js)
 - [get-edge](getEdge/get-edge.js)
+- [depth-first-graph-traversal](depthFirst/depth-first.js)
