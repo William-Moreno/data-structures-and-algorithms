@@ -142,6 +142,41 @@ class BinaryTree {
     return currentMaximum;
   }
 
+  leafWithTotalWeight(int) {
+    if(!this.root) {
+      return 'Exception - No nodes exist in the tree';
+    }
+
+    let counter = 0;
+    let exists = false;
+
+    const traverse = (current) => {
+      if(exists) {
+        return;
+      }
+
+      counter+= current.value;
+
+      if(current.left) {
+        traverse(current.left);
+      }
+
+      if(current.right) {
+        traverse(current.right);
+      }
+
+      if(!current.left && !current.right && counter === int) {
+        exists = true;
+      } else {
+        counter-= current.value;
+      }
+    };
+
+    let current = this.root;
+    traverse(current);
+    return exists;
+  }
+
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -221,7 +256,33 @@ class BinarySearchTree extends BinaryTree {
   }
 
   
+
+  
 }
+
+
+const whiteboardTree = new BinaryTree();
+
+whiteboardTree.root = new Node(3);
+whiteboardTree.root.left = new Node(6);
+whiteboardTree.root.right = new Node(-3);
+whiteboardTree.root.left.left = new Node(7);
+whiteboardTree.root.left.right = new Node(1);
+whiteboardTree.root.right.left = new Node(9);
+whiteboardTree.root.right.right = new Node(3);
+whiteboardTree.root.right.right.left = new Node(-7);
+whiteboardTree.root.right.right.right = new Node(11);
+
+console.log('input "16"', whiteboardTree.leafWithTotalWeight(16));
+console.log('input "10"', whiteboardTree.leafWithTotalWeight(10));
+console.log('input "50"', whiteboardTree.leafWithTotalWeight(50));
+console.log('input "-4"', whiteboardTree.leafWithTotalWeight(-4));
+console.log('input "3"', whiteboardTree.leafWithTotalWeight(3));
+console.log('input "14"', whiteboardTree.leafWithTotalWeight(14));
+
+
+
+
 
 
 module.exports = {
